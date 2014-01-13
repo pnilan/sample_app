@@ -27,7 +27,11 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+<<<<<<< HEAD
+    bcrypt-ruby (3.0.1)
+=======
     bcrypt-ruby (3.1.2)
+>>>>>>> modeling-users
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     builder (3.1.4)
@@ -190,7 +194,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
+  bcrypt-ruby (= 3.0.1)
+=======
   bcrypt-ruby (= 3.1.2)
+>>>>>>> modeling-users
   bootstrap-sass (= 2.3.2.0)
   capybara (= 2.1.0)
   childprocess (= 0.3.6)
