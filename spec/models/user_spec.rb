@@ -2,11 +2,7 @@ require_relative '../spec_helper'
 
 describe User do
 
-<<<<<<< HEAD
-	before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar") }
-=======
 	before { @user = User.new(name: "Example User", email: "user@example.com", password: 'foobar', password_confirmation: 'foobar') }
->>>>>>> modeling-users
 
 	subject { @user }
 
@@ -15,10 +11,7 @@ describe User do
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
-<<<<<<< HEAD
-=======
 	it { should respond_to(:authenticate) }
->>>>>>> modeling-users
 
 	it { should be_valid }
 
@@ -67,26 +60,14 @@ describe User do
 		it { should_not be_valid }
 	end
 
-<<<<<<< HEAD
-	describe "when password is not present" do
-		before do
-			@user = User.new(name: "Example User", email: "user@example.com", password: "  ", password_confirmation: "   ")
-=======
 	describe "when passowrd is not present" do 
 		before do
 			@user = User.new(name: "Example User", email: "user@example.com", password: "  ", password_confirmation: "  ")
->>>>>>> modeling-users
 		end
 		it { should_not be_valid }
 	end
 
 	describe "when password doesn't match confirmation" do
-<<<<<<< HEAD
-		before { @user.password_confirmation = "mismatch" }
-		it { should_not be_valid }
-	end
-end
-=======
 		before do
 			@user.password_confirmation = 'mismatch'
 			it { should_not be_valid }
@@ -114,4 +95,3 @@ end
 		it { should be_invalid }
 	end
 end
->>>>>>> modeling-users
