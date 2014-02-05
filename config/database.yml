@@ -41,11 +41,3 @@ test:
   pool: 5
   username: pnilan
   password: password1
- 
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: sample_app_production
-#   pool: 5
-#   username: pnilan
-#   password: password1
