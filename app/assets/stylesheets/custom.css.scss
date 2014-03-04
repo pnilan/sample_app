@@ -215,6 +215,15 @@ aside {
 	}
 }
 
+/* micropost character countdown */
+
+.remaining, .countdown {
+	// display: inline;
+	color: $grayLight;
+	float: right;
+}
+
+
 
 
 
