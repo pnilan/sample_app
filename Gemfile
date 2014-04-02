@@ -9,6 +9,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'pg', '0.17.1'
+gem 'sprockets', '2.11.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
