@@ -1,10 +1,19 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_action :signed_in_user, only: [:index, :search, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,    only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+      @users = User.paginate(page: params[:page]) 
+  end
+
+  def search
+    if params[:search].present?
+      name = params[:search]
+      @users = User.where("name LIKE ?", "%#{name}%").paginate(page: params[:page])
+    else
+      redirect_to users_path
+    end
   end
 
   def show
@@ -21,7 +30,7 @@ class UsersController < ApplicationController
   	if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
-  		redirect_to @user
+  		redirect_to root_url
   	else
   		render 'new'
   	end
