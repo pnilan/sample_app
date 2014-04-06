@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
   def search
     if params[:search].present?
-      name = params[:search]
-      @users = User.where("name LIKE ?", "%#{name}%").paginate(page: params[:page])
+      name = params[:search].downcase
+      @users = User.where("lower(name) LIKE ?", "%#{name}%").paginate(page: params[:page])
     else
       redirect_to users_path
     end
