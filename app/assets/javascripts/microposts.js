@@ -1,7 +1,9 @@
 // Character Countdown
 
 function updateCountdown() {
+
 	// 140 is the maximum message length
+
 	var max = 140
 	var remaining = max - $('#micropost_content').val().length;
 
@@ -42,4 +44,4 @@ function countdownAttributes() {
 		// font color = $grayLight
 		// $('.countdown').css('color', '$grayLight');
 	};
-}
+};

@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
+// Vendor Files 
+//= reqiore jquery.inview.js
 
