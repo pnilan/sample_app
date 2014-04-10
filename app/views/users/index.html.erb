@@ -6,6 +6,8 @@
 		<%= render @users %>
 	</ul>
 	
+
+
 <div class="load-more">
 	<%= link_to 'Load more users...', users_path(page: @users.next_page), class: "load-more-users", remote: true if @users.next_page %>
 </div>
