@@ -16,7 +16,7 @@ describe "User pages" do
     it { should have_title('All users') }
     it { should have_content('All users') }
 
-    describe "infinite scroll" do
+    describe "pagination scroll" do
 
       before(:all) { 30.times { FactoryGirl.create(:user) } }
       after(:all) { User.delete_all }
@@ -69,6 +69,18 @@ describe "User pages" do
       it { should have_content(m1.content) }
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
+    end
+
+    describe "follower/following counts" do
+      let(:other_user) { FactoryGirl.create(:user) }
+      before do
+        other_user.follow!(user)
+        user.follow!(other_user)
+        visit user_path(user)
+      end
+
+      it { should have_link("1 follower", href: followers_user_path(user)) }
+      it { should have_link("1 following", href: following_user_path(user)) }
     end
 
     describe "follow/unfollow buttons" do
